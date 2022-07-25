@@ -1,0 +1,95 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+OrionLib:MakeNotification({
+	Name = "RoHub",
+	Content = "Strucid successfully loaded!",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+
+local Window = OrionLib:MakeWindow({Name = "Rohub| Strucid", HidePremium = true, SaveConfig = false, IntroEnabled = false, ConfigFolder = "OrionTest"})
+
+local Tab = Window:MakeTab({
+	Name = "Main",
+	Icon = "rbxassetid://9947946243",
+	PremiumOnly = false
+})
+
+local Tab2 = Window:MakeTab({
+	Name = "Player",
+	Icon = "rbxassetid://5555718565",
+	PremiumOnly = false
+})
+
+local Tab3 = Window:MakeTab({
+	Name = "UI",
+	Icon = "rbxassetid://5480743826",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+	Name = "Silent aim",
+	Callback = function()
+      		 loadstring(game:HttpGet("https://raw.githubusercontent.com/ICEEDev/Epic-Roblox-Scripts/master/StrucidSilentAim.lua", true))()
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Pro firerate",
+		Callback = function()
+		  loadstring(game:HttpGet("https://raw.githubusercontent.com/DevHexrey22/PF/main/rate", true))()
+  	end      
+
+
+})
+
+Tab2:AddButton({
+	Name = "Fly",
+		Callback = function()
+		 loadstring(game:HttpGet(('https://pastebin.com/raw/WxmvCLLH'),true))()
+  	end      
+
+
+})
+
+Tab2:AddButton({
+	Name = "enable fly everytime you spawn in",
+		Callback = function()
+		 
+  	end      
+
+
+})
+
+Tab2:AddButton({
+	Name = "INF jump",
+		Callback = function()
+		   loadstring(game:HttpGet("https://raw.githubusercontent.com/DevHexry/INF/main/jump", true))()
+  	end      
+
+
+})
+
+
+Tab2:AddButton({
+	Name = "Rejoin on votekick",
+		Callback = function()
+		    loadstring(game:HttpGet("https://raw.githubusercontent.com/DevHexry/SECRTE/main/ff", true))()
+  	end      
+
+
+})
+
+
+
+
+
+Tab3:AddButton({
+	Name = "DestroyGui",
+	Callback = function()
+      		local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+            OrionLib:Destroy()
+  	end    
+})
+
+OrionLib:Init()
