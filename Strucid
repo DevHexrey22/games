@@ -22,6 +22,12 @@ local Tab2 = Window:MakeTab({
 })
 
 local Tab3 = Window:MakeTab({
+	Name = "Visuals",
+	Icon = "rbxassetid://5555718565",
+	PremiumOnly = false
+})
+
+local Tab4 = Window:MakeTab({
 	Name = "UI",
 	Icon = "rbxassetid://5480743826",
 	PremiumOnly = false
@@ -81,10 +87,29 @@ Tab2:AddButton({
 })
 
 
+Tab3:AddButton({
+	Name = "ESP",
+		Callback = function()
+		    loadstring(game:HttpGet("https://raw.githubusercontent.com/DevHexry/SKELEESP/main/SPOOKY", true))()
+  	end      
 
 
+})
 
 Tab3:AddButton({
+	Name = "Tacers",
+		Callback = function()
+		    loadstring(game:HttpGet("https://raw.githubusercontent.com/DevHexry/trace/main/lua", true))()
+  	end      
+
+
+})
+
+
+
+
+
+Tab4:AddButton({
 	Name = "DestroyGui",
 	Callback = function()
       		local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
