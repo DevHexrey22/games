@@ -1,0 +1,184 @@
+
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+OrionLib:MakeNotification({
+	Name = "RoHub",
+	Content = "Tapping sim successfully loaded!",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+
+local Window = OrionLib:MakeWindow({Name = "Rohub| Tapping sim", HidePremium = true, SaveConfig = false, IntroEnabled = false, ConfigFolder = "OrionTest"})
+
+local Tab = Window:MakeTab({
+	Name = "Farm",
+	Icon = "rbxassetid://9947946243",
+	PremiumOnly = false
+})
+
+local Tab2 = Window:MakeTab({
+	Name = "Teleports",
+	Icon = "rbxassetid://5555718565",
+	PremiumOnly = false
+})
+
+
+local Tab3 = Window:MakeTab({
+	Name = "Uis",
+	Icon = "rbxassetid://5555718565",
+	PremiumOnly = false
+})
+
+local Tab4 = Window:MakeTab({
+	Name = "Player",
+	Icon = "rbxassetid://5555718565",
+	PremiumOnly = false
+})
+
+local Tab5 = Window:MakeTab({
+	Name = "UI",
+	Icon = "rbxassetid://5480743826",
+	PremiumOnly = false
+})
+
+Tab:AddToggle({
+	Name = "Clicks",
+	Default = false,
+  if state then
+        getgenv().auto = true;
+while auto and task.wait() do
+   game:service'ReplicatedStorage'.Events.Tap:FireServer()
+end
+    else
+       getgenv().auto = false;
+		
+	end 
+  end
+})
+
+Tab:AddToggle({
+	Name = "Auto triple clicks",
+	Default = false,
+	Callback = function(Value)
+ if state then
+        getgenv().boost = true;
+while boost and task.wait() do
+local args = {
+    [1] = "tripleTaps"
+}
+game:GetService("ReplicatedStorage").Events.UseBoost:FireServer(unpack(args))
+end
+    else
+       getgenv().boost = false;
+    end
+    end
+})
+
+Tab:AddToggle({
+	Name = "Auto claim rank",
+	Default = false,
+	Callback = function(Value)
+if state then
+        getgenv().rank = true;
+while rank and task.wait() do
+game:GetService("ReplicatedStorage").Events.ClaimRankReward:FireServer()
+end
+    else
+       getgenv().rank = false;
+    end
+end
+})
+
+Tab2:AddDropdown({
+	Name = "Teleports",
+	Default = "Spawn",
+	Options = {"Spawn", "Forest Island", "Flower Island", "Swamp Island", "Snow Island", "Desert Island", "Death Island", "Beach Island", "Mines Island", "Cloud Island", "Coral Island", "Darkheart Island"},
+	Callback = function(SelectedLocation)
+   if SelectedLocation == "Spawn" then
+       game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-74,17,-480)
+   elseif SelectedLocation == "Forest Island" then
+       game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-165,977,-438)
+   elseif SelectedLocation == "Flower Island" then
+       game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-179,1515,-645)
+    elseif SelectedLocation == "Swamp Island" then
+       game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-259,2113,-654)
+	elseif SelectedLocation == "Snow Island" then
+       game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-231,2934,-471)   
+	elseif SelectedLocation == "Desert Island" then
+       game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-193,4225,-779)   
+	elseif SelectedLocation == "Death Island" then
+       game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-306,5416,-480)
+	elseif SelectedLocation == "Beach Island" then
+       game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-167,6872,-496)
+	elseif SelectedLocation == "Mines Island" then
+       game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-264,8366,-483)   
+	elseif SelectedLocation == "Cloud Island" then
+       game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-318,11236,-240)  
+	elseif SelectedLocation == "Coral Island" then
+       game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-494,13802,-543)  
+	elseif SelectedLocation == "Darkheart Island" then
+       game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-429,17170,-554)             
+   end
+		
+	end    
+})
+
+
+Tab3:AddDropdown({
+	Name = "Uis",
+	Default = "Shiny Machine",
+	Options = {"Shiny Machine", "Rainbow Machine", "Enchantments", "Upgrades"},
+	Callback = function(SelectedLocation)
+  if SelectedLocation == "Shiny Machine" then
+       game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-231,13,-549)
+   elseif SelectedLocation == "Rainbow Machine" then
+       game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-190,16,-559) 
+	elseif SelectedLocation == "Enchantments" then
+       game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(28,13,-576)    
+   elseif SelectedLocation == "Upgrades" then
+       game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-157,12,-392)            
+   end
+		
+	end    
+})
+
+
+Tab4:AddSlider({
+	Name = "Walk speed",
+	Min = 16,
+	Max = 500,
+	Default = 16,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "speed",
+	Callback = function(Value)
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = value
+	end    
+})
+
+Tab4:AddSlider({
+	Name = "Jump height",
+	Min = 16,
+	Max = 500,
+	Default = 16,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "gavity",
+	Callback = function(s)
+		game.Players.LocalPlayer.Character.Humanoid.JumpHeight = s
+	end    
+})
+
+
+
+
+
+Tab5:AddButton({
+	Name = "DestroyGui",
+	Callback = function()
+      		local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+            OrionLib:Destroy()
+  	end    
+})
+
+OrionLib:Init()
