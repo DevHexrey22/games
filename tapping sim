@@ -30,12 +30,18 @@ local Tab3 = Window:MakeTab({
 })
 
 local Tab4 = Window:MakeTab({
-	Name = "Player",
+	Name = "Eggs",
 	Icon = "rbxassetid://5555718565",
 	PremiumOnly = false
 })
 
 local Tab5 = Window:MakeTab({
+	Name = "Player",
+	Icon = "rbxassetid://5555718565",
+	PremiumOnly = false
+})
+
+local Tab6 = Window:MakeTab({
 	Name = "UI",
 	Icon = "rbxassetid://5480743826",
 	PremiumOnly = false
@@ -142,8 +148,15 @@ Tab3:AddDropdown({
 	end    
 })
 
+Tab4:AddToggle({
+	Name = "Auto open egg ( SOON )",
+	Default = false,
+	Callback = function(state)
+	
+})
 
-Tab4:AddSlider({
+
+Tab5:AddSlider({
 	Name = "Walk speed",
 	Min = 16,
 	Max = 500,
@@ -156,7 +169,7 @@ Tab4:AddSlider({
 	end    
 })
 
-Tab4:AddSlider({
+Tab5:AddSlider({
 	Name = "Jump height",
 	Min = 16,
 	Max = 500,
@@ -173,7 +186,7 @@ Tab4:AddSlider({
 
 
 
-Tab5:AddButton({
+Tab6:AddButton({
 	Name = "DestroyGui",
 	Callback = function()
       		local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
