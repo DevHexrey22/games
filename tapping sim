@@ -53,7 +53,7 @@ end
     else
        getgenv().auto = false;
     end
-end)
+end
 })
 
 Tab:AddToggle({
