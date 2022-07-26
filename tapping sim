@@ -44,6 +44,7 @@ local Tab5 = Window:MakeTab({
 Tab:AddToggle({
 	Name = "Clicks",
 	Default = false,
+		Callback = function(Value)
   if state then
         getgenv().auto = true;
 while auto and task.wait() do
