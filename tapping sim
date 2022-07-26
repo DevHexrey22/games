@@ -44,23 +44,22 @@ local Tab5 = Window:MakeTab({
 Tab:AddToggle({
 	Name = "Clicks",
 	Default = false,
-		Callback = function(Value)
-  if state then
+		Callback = function(state)
+ if state then
         getgenv().auto = true;
 while auto and task.wait() do
    game:service'ReplicatedStorage'.Events.Tap:FireServer()
 end
     else
        getgenv().auto = false;
-		
-	end 
-  end
+    end
+end)
 })
 
 Tab:AddToggle({
 	Name = "Auto triple clicks",
 	Default = false,
-	Callback = function(Value)
+	Callback = function(state)
  if state then
         getgenv().boost = true;
 while boost and task.wait() do
@@ -78,7 +77,7 @@ end
 Tab:AddToggle({
 	Name = "Auto claim rank",
 	Default = false,
-	Callback = function(Value)
+	Callback = function(state)
 if state then
         getgenv().rank = true;
 while rank and task.wait() do
@@ -92,7 +91,7 @@ end
 
 Tab2:AddDropdown({
 	Name = "Teleports",
-	Default = "Spawn",
+	Default = "",
 	Options = {"Spawn", "Forest Island", "Flower Island", "Swamp Island", "Snow Island", "Desert Island", "Death Island", "Beach Island", "Mines Island", "Cloud Island", "Coral Island", "Darkheart Island"},
 	Callback = function(SelectedLocation)
    if SelectedLocation == "Spawn" then
@@ -126,7 +125,7 @@ Tab2:AddDropdown({
 
 
 Tab3:AddDropdown({
-	Name = "Uis",
+	Name = "",
 	Default = "Shiny Machine",
 	Options = {"Shiny Machine", "Rainbow Machine", "Enchantments", "Upgrades"},
 	Callback = function(SelectedLocation)
