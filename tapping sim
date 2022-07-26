@@ -148,12 +148,7 @@ Tab3:AddDropdown({
 	end    
 })
 
-Tab4:AddToggle({
-	Name = "Auto open egg ( SOON )",
-	Default = false,
-	Callback = function(state)
-	
-})
+
 
 
 Tab5:AddSlider({
