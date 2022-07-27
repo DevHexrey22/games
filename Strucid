@@ -40,6 +40,24 @@ Tab:AddButton({
   	end    
 })
 
+Tab2:AddToggle({
+	Name = "Fly",
+	Default = false,
+	Callback = function(state)
+         if state then
+
+loadstring(game:HttpGet("https://pastebin.com/raw/MNf5xK7b", true))()
+
+	end
+  	end      
+
+
+})
+
+
+
+
+
 Tab:AddButton({
 	Name = "Pro firerate",
 		Callback = function()
