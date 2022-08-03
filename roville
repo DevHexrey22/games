@@ -1,1 +1,126 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
+OrionLib:MakeNotification({
+	Name = "RoHub",
+	Content = "Roville successfully loaded!",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+
+local Window = OrionLib:MakeWindow({Name = "Rohub|Roville", HidePremium = true, SaveConfig = false, IntroEnabled = false, ConfigFolder = "RoHub"})
+
+local Tab = Window:MakeTab({
+	Name = "Main",
+	Icon = "rbxassetid://9947946243",
+	PremiumOnly = false
+})
+
+
+local Tab2 = Window:MakeTab({
+	Name = "UI",
+	Icon = "rbxassetid://5480743826",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+	Name = "Teacher autofarm",
+	Callback = function()
+      		loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/JustEzpi/ROBLOX-Scripts/main/RoVille_Teacher"))()
+    end
+})
+
+Tab:AddButton({
+	Name = "AUTO ARCHEOLOGIST",
+	Callback = function()
+      		while wait() do
+         pcall(function()
+       game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Excevation.GetCompass.Part.CFrame
+wait(2)
+
+local args = {
+   [1] = workspace.Excevation.GetCompass
+}
+
+game:GetService("ReplicatedStorage").ActionEvents["Get compass"]:FireServer(unpack(args))
+wait(.5)
+               game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Excevation.DigArea.BASE.CFrame
+wait(.5)
+
+local args = {
+   [1] = workspace.Excevation.DigArea.DigArea
+}
+
+game:GetService("ReplicatedStorage").ActionEvents.Excevate:FireServer(unpack(args))
+wait(6)
+           game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Excevation.CleanArea.CF.CFrame
+wait(2)
+
+local args = {
+   [1] = workspace.Excevation.CleanArea.CleanItem
+}
+
+game:GetService("ReplicatedStorage").ActionEvents["Clean bones"]:FireServer(unpack(args))
+wait(6)
+               game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Excevation.Package.Part.CFrame
+wait(2)
+
+local args = {
+   [1] = workspace.Excevation.Package
+}
+
+game:GetService("ReplicatedStorage").ActionEvents.Package:FireServer(unpack(args))
+wait(3)
+
+
+
+end)
+end
+
+
+  	end    
+})
+
+
+Tab:AddButton({
+	Name = "Auto restock Buisness",
+	Callback = function()
+      		local player = game.Players.LocalPlayer
+local shop = game:GetService("Workspace").Properties[player.Name].Builds
+
+while wait(2) do
+    pcall(function()
+    for i,v in pairs(shop:GetChildren()) do
+        if v:FindFirstChild("ActionEvent") and v:FindFirstChild("Products") then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Part.CFrame
+       local A_1 = v
+       local Event = game:GetService("ReplicatedStorage").ActionEvents[v.ActionEvent.ActionName.Value]
+       Event:FireServer(A_1)
+       wait(1)
+     
+
+        end
+    end
+end) 
+end
+    end
+})
+
+
+
+
+Tab2:AddButton({
+	Name = "DestroyGui",
+	Callback = function()
+      		local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+            OrionLib:Destroy()
+  	end    
+})
+
+OrionLib:Init()
+Footer
+© 2022 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
