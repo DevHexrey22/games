@@ -3,11 +3,11 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shl
 OrionLib:MakeNotification({
 	Name = "RoHub",
 	Content = "Strucid successfully loaded!",
-	Image = "rbxassetid://4483345998",
+	Image = "rbxassetid://10469065673",
 	Time = 5
 })
 
-local Window = OrionLib:MakeWindow({Name = "Rohub| Strucid", HidePremium = true, SaveConfig = false, IntroEnabled = false, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "Rohub| Strucid", HidePremium = true, SaveConfig = false, IntroEnabled = false, ConfigFolder = "Rohub"})
 
 local Tab = Window:MakeTab({
 	Name = "Main",
