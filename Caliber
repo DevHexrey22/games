@@ -1,0 +1,142 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+local EspColor = Color3.fromRGB(255, 128, 128)
+
+OrionLib:MakeNotification({
+	Name = "RoHub ",
+	Content = "Caliber successfully loaded!",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+
+local Window = OrionLib:MakeWindow({Name = "Rohub|Caliber", HidePremium = true, SaveConfig = false, IntroEnabled = false, ConfigFolder = "OrionTest"})
+
+local Tab = Window:MakeTab({
+	Name = "Aim",
+	Icon = "rbxassetid://9947946243",
+	PremiumOnly = false
+})
+
+local Tab2 = Window:MakeTab({
+	Name = "Visuals",
+	Icon = "rbxassetid://5555718565",
+	PremiumOnly = false
+})
+
+local Tab3 = Window:MakeTab({
+	Name = "Player",
+	Icon = "rbxassetid://5555718565",
+	PremiumOnly = false
+})
+
+local Tab4 = Window:MakeTab({
+	Name = "UI",
+	Icon = "rbxassetid://5480743826",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+	Name = "Hitbox extender",
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/Kitzoon/Roblox-Scripts/main/hitboxextender.lua"))()
+})
+
+Tab:AddButton({
+	Name = "Gun mods",
+		Callback = function()
+		         
+  local list = {
+    str1 = {'RecoilMult', 0},
+    str2 = {'ReloadTime', 0},
+    str3 = {'Spread', 0},
+    str4 = {'Automatic', true},
+    str5 = {'Range', 1000000},
+    str6 = {'Ammo', 1000000},
+    str7 = {'ClipSize', 1000001},
+    str8 = {'FireRate', 0.05},
+    str9 = {'EquipTime', 0}
+}
+
+local function Mod(lib, str)
+    if type(lib) == 'table' and rawget(lib, str[1]) then
+        coroutine.wrap(function()
+            while wait() do
+                lib[str[1]] = str[2]
+            end
+        end)()
+    end
+end
+
+for i, v in pairs(getgc(true)) do
+    for u, x in pairs(list) do
+        Mod(v, x)
+    end
+end
+end
+
+})
+
+
+
+
+
+
+
+
+
+
+Tab3:AddButton({
+	Name = "INF jump",
+		Callback = function()
+		   loadstring(game:HttpGet("https://raw.githubusercontent.com/DevHexry/INF/main/jump", true))()
+  	end      
+
+
+})
+
+
+Tab2:AddButton({
+	Name = "ESP",
+		Callback = function()
+		    loadstring(game:HttpGet("https://raw.githubusercontent.com/DevHexrey22/esp/main/esp", true))()
+  	end      
+
+
+})
+
+Tab2:AddButton({
+	Name = "Player Radar(Draggable)",
+		Callback = function()
+		    loadstring(game:HttpGet("https://raw.githubusercontent.com/DevHexrey22/r/main/rar", true))()
+  	end      
+
+
+})
+
+
+
+
+
+Tab2:AddButton({
+	Name = "Tacers",
+		Callback = function()
+		    loadstring(game:HttpGet("https://raw.githubusercontent.com/DevHexry/trace/main/lua", true))()
+  	end      
+
+
+})
+
+
+
+
+
+
+
+Tab4:AddButton({
+	Name = "DestroyGui",
+	Callback = function()
+      		local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+            OrionLib:Destroy()
+  	end    
+})
+
+OrionLib:Init()
