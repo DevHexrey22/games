@@ -1,13 +1,13 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
 OrionLib:MakeNotification({
-	Name = "RoHub Premium ",
+	Name = "RoHub",
 	Content = "Rebirth Champions X successfully loaded!",
 	Image = "rbxassetid://4483345998",
 	Time = 5
 })
 
-local Window = OrionLib:MakeWindow({Name = "Rohub|Rebirth Champions X", HidePremium =false, SaveConfig = false, IntroEnabled = false, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "Rohub|Rebirth Champions X", HidePremium = true, SaveConfig = false, IntroEnabled = false, ConfigFolder = "OrionTest"})
 -- Locales
 local Eggs_Table = {}
 for i,v in pairs(game:GetService("Workspace").Scripts.Eggs:GetChildren()) do
