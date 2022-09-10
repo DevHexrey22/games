@@ -219,13 +219,6 @@ local SettingsTab = Window:MakeTab({
 	PremiumOnly = false
 })
 
--- Notifications
-OrionLib:MakeNotification({
-	Name = "Galaxy Hub Has Loaded!",
-	Content = "Join The Discord Server For More Scripts!",
-	Image = "rbxassetid://4483345737",
-	Time = 5
-})
 
 -- Toggles
 FarmTab:AddToggle({
